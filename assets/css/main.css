@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Terminal colors */
+  --terminal-black: #000000;
+  --terminal-dark-gray: #111111;
+  --terminal-medium-gray: #222222;
+  --terminal-green: #00ff00;
+  --terminal-bright-green: #00ff99;
+  --terminal-yellow: #fff700;
+  --terminal-red: #ff0000;
+  
+  /* Shadcn UI system colors */
+  --background: 0 0% 0%;
+  --foreground: 120 100% 50%;
+  
+  --card: 0 0% 7%;
+  --card-foreground: 120 100% 50%;
+  
+  --popover: 0 0% 0%;
+  --popover-foreground: 120 100% 50%;
+  
+  --primary: 120 100% 50%;
+  --primary-foreground: 0 0% 0%;
+  
+  --secondary: 0 0% 13%;
+  --secondary-foreground: 120 100% 50%;
+  
+  --muted: 0 0% 7%;
+  --muted-foreground: 120 100% 30%;
+  
+  --accent: 120 100% 30%;
+  --accent-foreground: 0 0% 0%;
+  
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 120 100% 50%;
+  --input: 120 100% 50%;
+  --ring: 120 100% 60%;
+  
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-terminal-black text-terminal-green antialiased font-terminal;
+  }
+}
+
+@layer components {
+  .terminal-header {
+    @apply border border-terminal-green p-3 mb-8 bg-terminal-darkGray;
+  }
+  
+  .terminal-controls {
+    @apply flex justify-between items-center mb-3;
+  }
+  
+  .terminal-circles {
+    @apply flex space-x-2;
+  }
+  
+  .terminal-circle {
+    @apply w-3 h-3 rounded-full;
+  }
+  
+  .terminal-title {
+    @apply text-xs;
+  }
+  
+  .terminal-text {
+    @apply text-lg md:text-xl;
+  }
+  
+  .terminal-prompt {
+    @apply mb-2;
+  }
+  
+  .terminal-cursor {
+    @apply w-2 h-5 bg-terminal-green inline-block ml-1 animate-cursor-blink;
+  }
+  
+  .section-container {
+    @apply container mx-auto px-4 md:px-6 pb-12 max-w-3xl;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 animate-text-glow;
+  }
+  
+  .terminal-input {
+    @apply w-full p-3 bg-terminal-black border border-terminal-green text-terminal-green focus:border-terminal-brightGreen focus:outline-none focus:ring-1 focus:ring-terminal-brightGreen;
+  }
+  
+  .terminal-textarea {
+    @apply w-full p-3 bg-terminal-black border border-terminal-green text-terminal-green focus:border-terminal-brightGreen focus:outline-none resize-none;
+  }
+  
+  .terminal-select {
+    @apply w-full p-3 bg-terminal-black border border-terminal-green text-terminal-green focus:border-terminal-brightGreen focus:outline-none;
+  }
+  
+  .terminal-button {
+    @apply px-6 py-3 border border-terminal-green bg-terminal-black hover:bg-terminal-green hover:text-terminal-black transition-colors duration-200 text-lg;
+  }
+  
+  .terminal-button-disabled {
+    @apply px-6 py-3 border border-terminal-green bg-terminal-black text-terminal-green opacity-50 cursor-not-allowed transition-all duration-200;
+  }
+  
+  .terminal-panel {
+    @apply bg-terminal-darkGray border-l-4 border-terminal-green p-6 mb-8;
+  }
+  
+  .terminal-warning {
+    @apply bg-terminal-mediumGray border-l-4 border-terminal-yellow p-4 mb-4 text-terminal-yellow;
+  }
+}
+
+@layer utilities {
+  .animate-cursor-blink {
+    animation: blink 1s step-end infinite;
+  }
+  
+  .animate-text-glow {
+    animation: glow 1.5s ease-in-out infinite alternate;
+  }
+  
+  .terminal-startup {
+    animation: startup 1s ease-out;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 2px rgba(0, 255, 0, 0.5); }
+  100% { text-shadow: 0 0 10px rgba(0, 255, 0, 0.9); }
+}
+
+@keyframes startup {
+  0% { height: 0; opacity: 0; }
+  100% { height: 100%; opacity: 1; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff00;
+  border-radius: 4px;
+}
+
+/* Lazy image loading styles */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.image-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-loading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(17, 17, 17, 0.3) 0%,
+    rgba(0, 255, 0, 0.2) 50%,
+    rgba(17, 17, 17, 0.3) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+.image-loaded {
+  animation: fadeIn 0.5s ease-in-out;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "bromley-cyber-nuxt",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxtjs/seo": "^3.2.2",
+    "nuxt": "^3.13.0",
+    "vue": "^3.4.0",
+    "vue-router": "^4.4.0"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.9.0",
+    "@nuxt/image": "^1.11.0",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/robots": "^5.5.5",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "eslint": "^9.36.0",
+    "nuxt-simple-sitemap": "^4.4.1"
+  }
+}
