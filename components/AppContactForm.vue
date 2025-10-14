@@ -97,6 +97,7 @@ const formData = reactive({
   email: '',
   subject: '',
   message: '',
+  agreeToPrivacy: false
 })
 
 const isSubmitting = ref(false)
@@ -115,8 +116,15 @@ const handleSubmit = async () => {
 
   try {
     isSubmitting.value = true
+    console.log('Submitting form data:', JSON.stringify({
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      agreeToPrivacy: formData.agreeToPrivacy
+    }, null, 2))
 
-    await $fetch('/api/contact', {
+    const response = await $fetch('/api/contact', {
       method: 'POST',
       body: {
         name: formData.name,
@@ -124,8 +132,13 @@ const handleSubmit = async () => {
         subject: formData.subject,
         message: formData.message,
         agreeToPrivacy: formData.agreeToPrivacy
+      },
+      onResponseError({ response }) {
+        console.error('Response error:', response._data)
       }
     })
+
+    console.log('Server response:', response)
 
     // Reset form
     formData.name = ''
@@ -136,8 +149,24 @@ const handleSubmit = async () => {
     
     success('Message Sent', 'Thanks for reaching out! We will get back to you soon.')
     
-  } catch (err) {
-    error('Submission Failed', err instanceof Error ? err.message : 'Unable to send your message right now. Please try again later.')
+  } catch (err: any) {
+    console.error('Form submission error:', err)
+    let errorMessage = 'Unable to send your message right now. Please try again later.'
+    
+    if (err.response) {
+      // Handle HTTP errors
+      const data = err.response._data
+      errorMessage = data?.message || data?.statusMessage || errorMessage
+      console.error('Response data:', data)
+    } else if (err.request) {
+      // Request was made but no response received
+      errorMessage = 'No response from server. Please check your internet connection.'
+    } else if (err.message) {
+      // Other errors
+      errorMessage = err.message
+    }
+    
+    error('Submission Failed', errorMessage)
   } finally {
     isSubmitting.value = false
   }
