@@ -23,8 +23,7 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@nuxt/image',
     '@nuxtjs/seo',
-    '@nuxtjs/robots',
-    'nuxt-simple-sitemap'
+    '@nuxtjs/robots'
   ],
   
   // Nitro configuration
