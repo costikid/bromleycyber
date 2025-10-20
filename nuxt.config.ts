@@ -3,10 +3,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   ssr: true,
+  spaLoadingTemplate: false,
   
   // Server configuration
   devServer: {
-    port: 4000
+    port: 3001,
+    host: '0.0.0.0' // Allow connections from any IP
   },
 
   // App configuration
@@ -25,11 +27,22 @@ export default defineNuxtConfig({
     'nuxt-simple-sitemap'
   ],
   
-  // Nitro configuration for static site generation
+  // Nitro configuration
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/']
+      routes: ['/', '/contact', '/privacy', '/quiz']
+    },
+    routeRules: {
+      // API routes configuration - server-side only
+      '/api/**': { 
+        cors: true,
+        headers: { 
+          'access-control-allow-methods': 'GET,POST,OPTIONS',
+          'access-control-allow-origin': '*',
+          'access-control-allow-headers': 'Content-Type'
+        }
+      }
     }
   },
 
