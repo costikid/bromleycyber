@@ -59,7 +59,7 @@ export default defineNuxtConfig({
     name: 'Bromley Cyber Security',
     description: 'Website security services for small businesses in Bromley by Costanza Casullo',
     defaultLocale: 'en',
-    trailingSlash: true
+    trailingSlash: false
   },
 
   // Sitemap configuration
