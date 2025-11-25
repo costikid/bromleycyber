@@ -47,9 +47,7 @@ export default defineNuxtConfig({
           'access-control-allow-origin': '*',
           'access-control-allow-headers': 'Content-Type'
         }
-      },
-      // Disable SSR for blog pages to prevent import.meta.glob issues
-      '/blog/**': { ssr: false }
+      }
     }
   },
 
