@@ -8,12 +8,12 @@
         </div>
 
         <p class="mt-4 text-sm text-terminal-green">
-          {{ error.statusMessage || 'The page you are looking for does not exist.' }}
+          {{ error.statusMessage || 'The page you are looking for does not exist (a friend of mine told me showing an error page on website load is a great marketing strategy...)' }}
         </p>
         
         <div class="mt-6">
           <NuxtLink to="/" class="terminal-button">
-            Return to Home
+            Return to Home (I promise this is not a scam)
           </NuxtLink>
         </div>
       </div>
