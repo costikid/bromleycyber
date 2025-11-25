@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="section-container">
-      <!-- Terminal-style header -->
+      <!-- Re-enable AppTerminal to test -->
       <AppTerminal>
         <p class="mb-2">Initializing cyber security system...</p>
         <p class="mb-2">Running diagnostics...</p>
@@ -34,11 +34,11 @@
             </p>
           </div>
           <div class="flex flex-col items-center">
-            <div class="relative w-56 h-56 rounded-full border-2 border-terminal-green image-loading overflow-hidden">
-              <NuxtImg 
+            <div class="relative w-56 h-56 rounded-full border-2 border-terminal-green overflow-hidden">
+              <img 
                 src="/images/founder-costanza.png" 
                 alt="Costanza Casullo - Founder of Bromley Cyber" 
-                class="object-cover h-full w-full image-loaded"
+                class="object-cover h-full w-full"
                 loading="lazy"
                 width="400"
                 height="400"

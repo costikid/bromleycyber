@@ -19,12 +19,18 @@ export default defineNuxtConfig({
 
   // Modules
   modules: [
+    '@nuxthub/core',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@nuxt/image',
     '@nuxtjs/seo',
     '@nuxtjs/robots'
   ],
+
+  // NuxtHub configuration
+  hub: {
+    // Optional: configure NuxtHub features if needed
+  },
   
   // Nitro configuration
   nitro: {
@@ -41,7 +47,9 @@ export default defineNuxtConfig({
           'access-control-allow-origin': '*',
           'access-control-allow-headers': 'Content-Type'
         }
-      }
+      },
+      // Disable SSR for blog pages to prevent import.meta.glob issues
+      '/blog/**': { ssr: false }
     }
   },
 
@@ -90,6 +98,11 @@ export default defineNuxtConfig({
 
   // CSS configuration
   css: ['~/assets/css/main.css'],
+  
+  // TailwindCSS configuration
+  tailwindcss: {
+    configPath: 'tailwind.config.ts'
+  },
 
   runtimeConfig: {
     resendApiKey: process.env.RESEND_API_KEY,
