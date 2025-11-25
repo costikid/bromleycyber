@@ -48,6 +48,10 @@ export default defineNuxtConfig({
           'access-control-allow-headers': 'Content-Type'
         }
       }
+    },
+    // Handle optional peer dependencies during deployment
+    rollupConfig: {
+      external: ['@react-email/render']
     }
   },
 
