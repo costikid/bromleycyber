@@ -19,7 +19,6 @@ export default defineNuxtConfig({
 
   // Modules
   modules: [
-    '@nuxthub/core',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@nuxt/image',
@@ -27,13 +26,9 @@ export default defineNuxtConfig({
     '@nuxtjs/robots'
   ],
 
-  // NuxtHub configuration
-  hub: {
-    // Optional: configure NuxtHub features if needed
-  },
-  
-  // Nitro configuration
+  // Nitro configuration for Vercel
   nitro: {
+    preset: 'vercel',
     prerender: {
       crawlLinks: true,
       routes: ['/', '/contact', '/privacy', '/quiz']
@@ -48,10 +43,6 @@ export default defineNuxtConfig({
           'access-control-allow-headers': 'Content-Type'
         }
       }
-    },
-    // Handle optional peer dependencies during deployment
-    rollupConfig: {
-      external: ['@react-email/render']
     }
   },
 

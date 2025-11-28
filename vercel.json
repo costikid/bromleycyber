@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "server/api/contact.post.ts": {
+      "maxDuration": 10
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    }
+  ]
+}
