@@ -22,8 +22,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@nuxt/image',
-    '@nuxtjs/seo',
-    '@nuxtjs/robots'
+    '@nuxtjs/seo'
   ],
 
   // Nitro configuration for Vercel
@@ -80,13 +79,6 @@ export default defineNuxtConfig({
       { loc: '/contact', changefreq: 'monthly', priority: 0.7 },
       { loc: '/quiz', changefreq: 'monthly', priority: 0.6 }
     ]
-  },
-
-  // Robots.txt configuration
-  robots: {
-    userAgents: '*',
-    disallow: ['/admin', '/api'],
-    sitemap: (process.env.NUXT_PUBLIC_SITE_URL || 'https://bromleycyber.co.uk') + '/sitemap.xml'
   },
 
   // CSS configuration
