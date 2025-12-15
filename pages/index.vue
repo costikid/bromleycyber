@@ -68,7 +68,7 @@
           process ensures your website is protected against common vulnerabilities from day one.
         </p>
         <NuxtLink to="/web-development" class="terminal-button inline-block">
-          Learn More
+          Learn more about secure website development
         </NuxtLink>
       </div>
       

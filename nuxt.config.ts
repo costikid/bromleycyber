@@ -14,7 +14,12 @@ export default defineNuxtConfig({
   // App configuration
   app: {
     baseURL: '/',
-    buildAssetsDir: '/_nuxt/'
+    buildAssetsDir: '/_nuxt/',
+    head: {
+      htmlAttrs: {
+        lang: 'en'
+      }
+    }
   },
 
   // Modules

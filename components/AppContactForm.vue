@@ -72,7 +72,7 @@
               class="mt-1 mr-2"
             />
             <label for="privacyPolicy" class="text-sm">
-              I have read and agree to the <NuxtLink to="/privacy" class="text-terminal-brightGreen hover:underline">Privacy Policy</NuxtLink> <span class="text-terminal-red">*</span>
+              I have read and agree to the <NuxtLink to="/privacy" class="text-terminal-brightGreen underline underline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-terminal-brightGreen">Privacy Policy</NuxtLink> <span class="text-terminal-red">*</span>
             </label>
           </div>
           
