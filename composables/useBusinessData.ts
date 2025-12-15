@@ -5,7 +5,7 @@ export const useBusinessData = () => {
     description: "Website security for small businesses in Bromley — I help small business owners protect their websites from common vulnerabilities and hacks. Your site won't just look good — it'll stay online, up to date, and protected from the latest threats.",
     url: "https://bromleycyber.co.uk",
     telephone: "+44 7737163885",
-    email: "costanza@bromleywebworks.co.uk",
+    email: "info@bromleycyber.co.uk",
     address: {
       streetAddress: "3 Fairmead",
       addressLocality: "Bromley",

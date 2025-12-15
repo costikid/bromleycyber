@@ -91,7 +91,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     resendApiKey: process.env.RESEND_API_KEY,
-    notificationEmail: process.env.NOTIFICATION_EMAIL || 'costanza@bromleywebworks.co.uk',
+    notificationEmail: process.env.NOTIFICATION_EMAIL || 'info@bromleycyber.co.uk',
     siteUrl: process.env.NUXT_SITE_URL || 'https://bromleycyber.co.uk',
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || process.env.NUXT_SITE_URL || 'https://bromleycyber.co.uk'

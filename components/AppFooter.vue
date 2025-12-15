@@ -42,8 +42,8 @@
         <div>
           <h3 class="text-xl font-bold mb-4">Contact Details</h3>
           <p class="mb-2">
-            <a href="mailto:costanza@bromleywebworks.co.uk" class="hover:text-terminal-brightGreen">
-              costanza@bromleywebworks.co.uk
+            <a href="mailto:info@bromleycyber.co.uk" class="hover:text-terminal-brightGreen">
+              info@bromleycyber.co.uk
             </a>
           </p>
           <p>
