@@ -4,7 +4,7 @@
       <div class="flex items-center space-x-2">
         <NuxtLink to="/" class="flex items-center space-x-2">
           <span class="text-2xl font-bold animate-text-glow">Bromley</span>
-          <span class="text-2xl font-bold text-terminal-brightGreen">[Cyber]</span>
+          <span class="text-2xl font-bold text-terminal-bright-green">[Cyber]</span>
         </NuxtLink>
       </div>
       
@@ -12,10 +12,10 @@
         <NuxtLink 
           to="/" 
           :class="[
-            'transition-colors duration-200',
+            'transition-colors duration-150',
             isActive('/') 
-              ? 'text-terminal-brightGreen border-b-2 border-terminal-brightGreen' 
-              : 'hover:text-terminal-brightGreen'
+              ? 'text-terminal-bright-green border-b-2 border-terminal-bright-green' 
+              : 'hover:text-terminal-bright-green'
           ]"
         >
           Home
@@ -23,10 +23,10 @@
         <NuxtLink 
           to="/quiz" 
           :class="[
-            'transition-colors duration-200',
+            'transition-colors duration-150',
             isActive('/quiz') 
-              ? 'text-terminal-brightGreen border-b-2 border-terminal-brightGreen' 
-              : 'hover:text-terminal-brightGreen'
+              ? 'text-terminal-bright-green border-b-2 border-terminal-bright-green' 
+              : 'hover:text-terminal-bright-green'
           ]"
         >
           Security Quiz
@@ -34,10 +34,10 @@
         <NuxtLink 
           to="/web-development" 
           :class="[
-            'transition-colors duration-200',
+            'transition-colors duration-150',
             isActive('/web-development') 
-              ? 'text-terminal-brightGreen border-b-2 border-terminal-brightGreen' 
-              : 'hover:text-terminal-brightGreen'
+              ? 'text-terminal-bright-green border-b-2 border-terminal-bright-green' 
+              : 'hover:text-terminal-bright-green'
           ]"
         >
           Web Development
@@ -45,21 +45,32 @@
         <NuxtLink 
           to="/security-audit" 
           :class="[
-            'transition-colors duration-200',
+            'transition-colors duration-150',
             isActive('/security-audit') 
-              ? 'text-terminal-brightGreen border-b-2 border-terminal-brightGreen' 
-              : 'hover:text-terminal-brightGreen'
+              ? 'text-terminal-bright-green border-b-2 border-terminal-bright-green' 
+              : 'hover:text-terminal-bright-green'
           ]"
         >
           Security Audit
         </NuxtLink>
         <NuxtLink 
+          to="/blog" 
+          :class="[
+            'transition-colors duration-150',
+            isActive('/blog') || route.path.startsWith('/blog/') 
+              ? 'text-terminal-bright-green border-b-2 border-terminal-bright-green' 
+              : 'hover:text-terminal-bright-green'
+          ]"
+        >
+          Blog
+        </NuxtLink>
+        <NuxtLink 
           to="/contact" 
           :class="[
-            'transition-colors duration-200',
+            'transition-colors duration-150',
             isActive('/contact') 
-              ? 'text-terminal-brightGreen border-b-2 border-terminal-brightGreen' 
-              : 'hover:text-terminal-brightGreen'
+              ? 'text-terminal-bright-green border-b-2 border-terminal-bright-green' 
+              : 'hover:text-terminal-bright-green'
           ]"
         >
           Contact
@@ -83,35 +94,42 @@
       <div class="flex flex-col px-4 py-2">
         <NuxtLink 
           to="/" 
-          :class="['py-3', isActive('/') ? 'text-terminal-brightGreen' : '']"
+          :class="['py-3', isActive('/') ? 'text-terminal-bright-green' : '']"
           @click="closeMenu"
         >
           Home
         </NuxtLink>
         <NuxtLink 
           to="/quiz" 
-          :class="['py-3', isActive('/quiz') ? 'text-terminal-brightGreen' : '']"
+          :class="['py-3', isActive('/quiz') ? 'text-terminal-bright-green' : '']"
           @click="closeMenu"
         >
           Security Quiz
         </NuxtLink>
         <NuxtLink 
           to="/web-development" 
-          :class="['py-3', isActive('/web-development') ? 'text-terminal-brightGreen' : '']"
+          :class="['py-3', isActive('/web-development') ? 'text-terminal-bright-green' : '']"
           @click="closeMenu"
         >
           Web Development
         </NuxtLink>
         <NuxtLink 
           to="/security-audit" 
-          :class="['py-3', isActive('/security-audit') ? 'text-terminal-brightGreen' : '']"
+          :class="['py-3', isActive('/security-audit') ? 'text-terminal-bright-green' : '']"
           @click="closeMenu"
         >
           Security Audit
         </NuxtLink>
         <NuxtLink 
+          to="/blog" 
+          :class="['py-3', isActive('/blog') || route.path.startsWith('/blog/') ? 'text-terminal-bright-green' : '']"
+          @click="closeMenu"
+        >
+          Blog
+        </NuxtLink>
+        <NuxtLink 
           to="/contact" 
-          :class="['py-3', isActive('/contact') ? 'text-terminal-brightGreen' : '']"
+          :class="['py-3', isActive('/contact') ? 'text-terminal-bright-green' : '']"
           @click="closeMenu"
         >
           Contact

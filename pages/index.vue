@@ -5,7 +5,7 @@
       <AppTerminal>
         <p class="mb-2">Initializing cyber security system...</p>
         <p class="mb-2">Running diagnostics...</p>
-        <p class="mb-2 text-terminal-brightGreen">SYSTEM SECURE</p>
+        <p class="mb-2 text-terminal-bright-green">SYSTEM SECURE</p>
         <p class="mb-2">Welcome to Bromley Cyber</p>
       </AppTerminal>
 
@@ -14,13 +14,13 @@
       </h1>
       
       <!-- Founder Quote and Introduction -->
-      <div class="bg-terminal-darkGray border-l-4 border-terminal-green p-6 mb-12">
+      <div class="bg-terminal-dark-gray border-l-4 border-terminal-green p-6 mb-12">
         <blockquote class="mb-4 text-xl italic">
           "There are countless beautiful websites, but far too few that are truly secure."
         </blockquote>
         <div class="flex justify-end mb-4">
           <div>
-            <p class="text-terminal-brightGreen font-bold">Costanza Casullo</p>
+            <p class="text-terminal-bright-green font-bold">Costanza Casullo</p>
             <p>Founder of Bromley Cyber</p>
           </div>
         </div>
@@ -50,7 +50,7 @@
       </div>
 
       <!-- Security Quiz Teaser -->
-      <div class="bg-terminal-darkGray border-l-4 border-terminal-brightGreen p-6 mb-12">
+      <div class="bg-terminal-dark-gray border-l-4 border-terminal-bright-green p-6 mb-12">
         <h2 class="text-2xl font-bold mb-4">How Secure is Your Website?</h2>
         <p class="mb-6">
           Take our free Website Security Quiz to get a quick assessment of your current security posture and recommendations for improvement.
@@ -61,7 +61,7 @@
       </div>
 
       <!-- Secure Website Development -->
-      <div class="bg-terminal-darkGray border-l-4 border-terminal-green p-6 mb-12">
+      <div class="bg-terminal-dark-gray border-l-4 border-terminal-green p-6 mb-12">
         <h2 class="text-2xl font-bold mb-4">Secure Website Development</h2>
         <p class="mb-4">
           Building new websites with security as a foundation, not an afterthought. Our secure development 
@@ -73,7 +73,7 @@
       </div>
       
       <!-- Website Security Audits -->
-      <div class="bg-terminal-darkGray border-l-4 border-terminal-green p-6 mb-12">
+      <div class="bg-terminal-dark-gray border-l-4 border-terminal-green p-6 mb-12">
         <h2 class="text-2xl font-bold mb-4">Website Security Audits</h2>
         <p class="mb-4">
           Comprehensive evaluation of your website's security posture, identifying vulnerabilities and providing 
@@ -91,7 +91,7 @@
         <AppContactForm />
       </template>
       <template #fallback>
-        <div class="bg-terminal-darkGray border border-terminal-green p-6 text-center">
+        <div class="bg-terminal-dark-gray border border-terminal-green p-6 text-center">
           Loading contact form...
         </div>
       </template>

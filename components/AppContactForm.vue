@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="py-12 bg-terminal-darkGray mt-12">
+  <section id="contact" class="py-12 bg-terminal-dark-gray mt-12">
     <div class="container mx-auto px-4 md:px-6 max-w-3xl">
       <h2 class="section-title">Ready for a Secure Website?</h2>
       
@@ -72,7 +72,7 @@
               class="mt-1 mr-2"
             />
             <label for="privacyPolicy" class="text-sm">
-              I have read and agree to the <NuxtLink to="/privacy" class="text-terminal-brightGreen underline underline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-terminal-brightGreen">Privacy Policy</NuxtLink> <span class="text-terminal-red">*</span>
+              I have read and agree to the <NuxtLink to="/privacy" class="text-terminal-bright-green underline underline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-terminal-bright-green">Privacy Policy</NuxtLink> <span class="text-terminal-red">*</span>
             </label>
           </div>
           

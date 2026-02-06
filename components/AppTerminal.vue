@@ -11,7 +11,7 @@
     <div class="terminal-text">
       <p class="terminal-prompt">
         <span class="text-terminal-yellow">root@bromley-security</span>:
-        <span class="text-terminal-brightGreen">~</span>$ ./run_security_scan.sh
+        <span class="text-terminal-bright-green">~</span>$ ./run_security_scan.sh
       </p>
       <div class="terminal-startup">
         <slot />

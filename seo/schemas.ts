@@ -8,6 +8,28 @@ export type PageSeo = {
   jsonLd?: Record<string, any> | (() => Record<string, any> | null)
 }
 
+export type BlogPostData = {
+  title: string
+  excerpt: string
+  content: string
+  slug: string
+  publishedDate: string
+  modifiedDate?: string
+  featuredImage?: {
+    url: string
+    alt: string
+    width?: number
+    height?: number
+  }
+  author?: {
+    name: string
+    url?: string
+  }
+  categories?: string[]
+  tags?: string[]
+  readingTime?: number
+}
+
 export type LocalBusinessData = {
   name: string
   founder: string
@@ -40,7 +62,7 @@ export const homeSeo: PageSeo = {
   description:
     "Website security for small businesses in Bromley — I help small business owners protect their websites from common vulnerabilities and hacks. Your site won't just look good — it'll stay online, up to date, and protected from the latest threats.",
   keywords:
-    'Bromley Cyber, Costanza Casullo, website security Bromley, cyber security consultant Bromley, local cybersecurity services, small business website security, secure website development Bromley',
+    'website security services Bromley, cyber security consultant Bromley, Costanza Casullo, small business website security, cybersecurity expert Bromley, website protection services',
   ogImage: '/images/founder-costanza.png',
   canonicalPath: '/',
 }
@@ -64,7 +86,7 @@ export const webDevSeo: PageSeo = {
   description:
     'Security-focused website development for small businesses in Bromley by Costanza Casullo. We build secure, professional websites with security integrated at every stage of development.',
   keywords:
-    'secure website development Bromley, Costanza Casullo website developer, small business website security, secure web design Bromley, security-first web development',
+    'secure website development Bromley, security-first web design, WordPress security development, secure web development services, protected website building, cybersecurity web development',
   canonicalPath: '/web-development',
   twitter: {
     title: 'Secure Website Development | Costanza Casullo',
@@ -122,5 +144,73 @@ export const buildServiceJsonLd = (service: ServiceData) => {
       '@type': 'AdministrativeArea',
       name: area.name,
     })),
+  }
+}
+
+export const buildBlogPostJsonLd = (post: BlogPostData, siteUrl: string) => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': `${siteUrl}/blog/${post.slug}`,
+    headline: post.title,
+    description: post.excerpt,
+    articleBody: post.content,
+    url: `${siteUrl}/blog/${post.slug}`,
+    datePublished: post.publishedDate,
+    ...(post.modifiedDate && { dateModified: post.modifiedDate }),
+    ...(post.author && {
+      author: {
+        '@type': 'Person',
+        name: post.author.name,
+        ...(post.author.url && { url: post.author.url }),
+      },
+    }),
+    publisher: {
+      '@type': 'Organization',
+      name: 'Bromley Cyber',
+      url: siteUrl,
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteUrl}/blog/${post.slug}`,
+    },
+    ...(post.featuredImage && {
+      image: {
+        '@type': 'ImageObject',
+        url: post.featuredImage.url,
+        ...(post.featuredImage.width && { width: post.featuredImage.width }),
+        ...(post.featuredImage.height && { height: post.featuredImage.height }),
+      },
+    }),
+    ...(post.categories && { articleSection: post.categories }),
+    ...(post.tags && { keywords: post.tags.join(', ') }),
+  }
+}
+
+export const buildBlogPostSeo = (post: BlogPostData, siteUrl: string): PageSeo => {
+  // Clean HTML from excerpt for meta description
+  const cleanExcerpt = post.excerpt.replace(/<[^>]*>/g, '').trim()
+  const description = cleanExcerpt.length > 160 
+    ? cleanExcerpt.slice(0, 157) + '...' 
+    : cleanExcerpt
+
+  return {
+    title: `${post.title} - Bromley Cyber Security`,
+    description,
+    keywords: [
+      'cybersecurity blog',
+      'website security',
+      'Bromley cyber security',
+      ...(post.tags || []),
+      ...(post.categories || [])
+    ].join(', '),
+    ogImage: post.featuredImage?.url,
+    canonicalPath: `/blog/${post.slug}`,
+    twitter: {
+      title: post.title,
+      description,
+      image: post.featuredImage?.url,
+    },
+    jsonLd: () => buildBlogPostJsonLd(post, siteUrl),
   }
 }

@@ -5,18 +5,21 @@
       <AppTerminal>
         <p class="mb-2">Initializing secure development environment...</p>
         <p class="mb-2">Loading security protocols...</p>
-        <p class="mb-2 text-terminal-brightGreen">SECURE DEVELOPMENT READY</p>
+        <p class="mb-2 text-terminal-bright-green">SECURE DEVELOPMENT READY</p>
       </AppTerminal>
 
       <h1 class="section-title">Secure Website Development</h1>
       
-      <div class="bg-terminal-darkGray border-l-4 border-terminal-green p-6 mb-8">
+      <div class="bg-terminal-dark-gray border-l-4 border-terminal-green p-6 mb-8">
         <h2 class="text-2xl mb-4">Security-First Website Development</h2>
         <p class="mb-4">
           At Bromley Cyber, we build websites with security as a foundation, not an afterthought. Our development process integrates security at every stage, ensuring your website is protected against common vulnerabilities from day one.
         </p>
         <p class="mb-4">
           Using industry best practices and the latest secure coding techniques, we create websites that are both visually appealing and robustly protected against cyber threats.
+        </p>
+        <p class="mb-4">
+          Already have a website? Start with a <NuxtLink to="/security-audit" class="text-terminal-bright-green hover:underline">comprehensive security audit</NuxtLink> to identify and fix vulnerabilities.
         </p>
       </div>
     </div>

@@ -3,7 +3,7 @@
     <AppTerminal>
       <p class="mb-2">Loading privacy policy...</p>
       <p class="mb-2">Ensuring data protection compliance...</p>
-      <p class="mb-2 text-terminal-brightGreen">DOCUMENT VERIFIED</p>
+      <p class="mb-2 text-terminal-bright-green">DOCUMENT VERIFIED</p>
     </AppTerminal>
 
     <h1 class="section-title">Privacy Policy</h1>

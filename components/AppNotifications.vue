@@ -42,7 +42,7 @@ import type { Notification } from '~/composables/useNotifications'
 const { notifications, removeNotification } = useNotifications()
 
 const getNotificationClasses = (type: Notification['type']) => {
-  const baseClasses = 'bg-terminal-darkGray text-terminal-green'
+  const baseClasses = 'bg-terminal-dark-gray text-terminal-green'
   
   switch (type) {
     case 'success':

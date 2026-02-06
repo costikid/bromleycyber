@@ -177,7 +177,7 @@
               class="mb-2"
             >
               <label 
-                class="flex items-start p-3 border border-terminal-green hover:bg-terminal-darkGray cursor-pointer"
+                class="flex items-start p-3 border border-terminal-bright-green hover:bg-terminal-dark-gray cursor-pointer"
                 tabindex="0"
                 @keydown="handleOptionKeydown($event, index)"
               >
@@ -316,7 +316,7 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          <div class="bg-terminal-black p-4 border border-terminal-green" role="region" aria-labelledby="security-score-heading">
+          <div class="bg-terminal-black p-4 border border-terminal-bright-green" role="region" aria-labelledby="security-score-heading">
             <h4 id="security-score-heading" class="font-bold mb-2">Security Score</h4>
             <div class="text-2xl text-center" aria-live="polite" aria-atomic="true">
               <span :aria-label="`Your score is ${score} out of a possible 3 points`">
@@ -325,17 +325,17 @@
             </div>
           </div>
           
-          <div class="bg-terminal-black p-4 border border-terminal-green" role="region" aria-labelledby="risk-level-heading">
+          <div class="bg-terminal-black p-4 border border-terminal-bright-green" role="region" aria-labelledby="risk-level-heading">
             <h4 id="risk-level-heading" class="font-bold mb-2">Risk Level</h4>
             <div 
-              :class="`text-2xl text-center ${score >= 3 ? 'text-terminal-green' : 'text-terminal-red'}`"
+              :class="`text-2xl text-center ${score >= 3 ? 'text-terminal-bright-green' : 'text-terminal-red'}`"
               aria-live="polite"
             >
               {{ score >= 3 ? 'Low Risk' : 'High Risk' }}
             </div>
           </div>
           
-          <div class="bg-terminal-black p-4 border border-terminal-green" role="region" aria-labelledby="next-steps-heading">
+          <div class="bg-terminal-black p-4 border border-terminal-bright-green" role="region" aria-labelledby="next-steps-heading">
             <h4 id="next-steps-heading" class="font-bold mb-2">Next Steps</h4>
             <div class="text-lg text-center" aria-live="polite">
               {{ score >= 3 ? 'Annual Security Review' : 'Immediate Security Audit' }}
@@ -351,7 +351,7 @@
         <div class="flex flex-wrap gap-4" role="group" aria-label="Social media sharing options">
           <button 
             @click="shareOnSocialMedia('twitter')"
-            class="flex items-center px-4 py-2 border border-terminal-green bg-terminal-black hover:bg-terminal-green hover:text-terminal-black transition-colors duration-200"
+            class="flex items-center px-4 py-2 border border-terminal-bright-green bg-terminal-black hover:bg-terminal-green hover:text-terminal-black transition-colors duration-150"
             aria-label="Share on Twitter"
           >
             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -361,7 +361,7 @@
           </button>
           <button 
             @click="shareOnSocialMedia('facebook')"
-            class="flex items-center px-4 py-2 border border-terminal-green bg-terminal-black hover:bg-terminal-green hover:text-terminal-black transition-colors duration-200"
+            class="flex items-center px-4 py-2 border border-terminal-bright-green bg-terminal-black hover:bg-terminal-green hover:text-terminal-black transition-colors duration-150"
             aria-label="Share on Facebook" 
           >
             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -371,7 +371,7 @@
           </button>
           <button 
             @click="shareOnSocialMedia('linkedin')"
-            class="flex items-center px-4 py-2 border border-terminal-green bg-terminal-black hover:bg-terminal-green hover:text-terminal-black transition-colors duration-200"
+            class="flex items-center px-4 py-2 border border-terminal-bright-green bg-terminal-black hover:bg-terminal-green hover:text-terminal-black transition-colors duration-150"
             aria-label="Share on LinkedIn"
           >
             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -387,7 +387,7 @@
         <h3 id="contact-heading" class="text-2xl mb-3">Your score suggests there are some improvements needed.</h3>
         <p class="mb-4">We recommend you reach out to our cybersecurity experts for professional help securing your website.</p>
         
-        <div class="bg-terminal-black p-4 border border-terminal-green mb-4" aria-labelledby="services-heading">
+        <div class="bg-terminal-black p-4 border border-terminal-bright-green mb-4" aria-labelledby="services-heading">
           <h4 id="services-heading" class="font-bold mb-3">Our Security Services Include:</h4>
           <ul class="list-disc list-inside space-y-2" role="list">
             <li>Website Security Audits</li>

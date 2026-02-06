@@ -1,5 +1,6 @@
 import { defineEventHandler, createError, readBody } from 'h3'
-import { Resend } from 'resend'
+import { createEmailService } from '~/server/utils/emailService'
+import { validateEmail, validateRequiredFields } from '~/server/utils/validation'
 
 interface QuizSubmission {
   hasWebsite: boolean
@@ -27,17 +28,7 @@ const formatQuizEmail = (submission: QuizSubmission) => {
 }
 
 export default defineEventHandler(async (event) => {
-  const runtimeConfig = useRuntimeConfig()
-
-  const apiKey = runtimeConfig.resendApiKey as string | undefined
-  if (typeof apiKey !== 'string' || apiKey.length === 0) {
-    throw createError({ statusCode: 500, statusMessage: 'Email service not configured' })
-  }
-
-  const recipient = runtimeConfig.notificationEmail as string | undefined
-  if (typeof recipient !== 'string' || recipient.length === 0) {
-    throw createError({ statusCode: 500, statusMessage: 'Notification email not configured' })
-  }
+  const emailService = createEmailService()
 
   const body = await readBody<QuizSubmission>(event)
 
@@ -45,24 +36,11 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, statusMessage: 'Invalid submission payload' })
   }
 
-  const requiredFields: Array<keyof QuizSubmission> = ['score', 'firstName', 'lastName', 'email']
-  for (const field of requiredFields) {
-    if (!body[field]) {
-      throw createError({ statusCode: 400, statusMessage: `Missing required field: ${field}` })
-    }
-  }
+  validateRequiredFields(body, ['score', 'firstName', 'lastName', 'email'])
+  validateEmail(body.email)
 
-  // Basic email validation
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  if (!emailPattern.test(body.email)) {
-    throw createError({ statusCode: 400, statusMessage: 'Invalid email address' })
-  }
-
-  const resend = new Resend(apiKey)
-
-  await resend.emails.send({
+  await emailService.send({
     from: 'Bromley Cyber Quiz <onboarding@resend.dev>',
-    to: recipient,
     replyTo: body.email,
     subject: `New Security Quiz Submission (${body.score}/3)`,
     html: formatQuizEmail(body)

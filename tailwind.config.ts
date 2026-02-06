@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
 export default {
   darkMode: ["class"],
@@ -21,10 +22,10 @@ export default {
         // Terminal theme colors
         terminal: {
           black: "var(--terminal-black)",
-          darkGray: "var(--terminal-dark-gray)",
-          mediumGray: "var(--terminal-medium-gray)",
+          "dark-gray": "var(--terminal-dark-gray)",
+          "medium-gray": "var(--terminal-medium-gray)",
           green: "var(--terminal-green)",
-          brightGreen: "var(--terminal-bright-green)",
+          "bright-green": "var(--terminal-bright-green)",
           yellow: "var(--terminal-yellow)",
           red: "var(--terminal-red)",
         },
@@ -96,8 +97,10 @@ export default {
       },
       fontFamily: {
         terminal: ["VT323", "monospace"],
+        mono: ["Fira Code", "monospace"],
+        sans: ["Inter", "sans-serif"],
       },
     },
   },
-  plugins: [],
+  plugins: [typography],
 } satisfies Config;

@@ -1,3 +1,9 @@
+const AREA_SERVED = [
+  { name: "Bromley" },
+  { name: "London" },
+  { name: "Kent" }
+]
+
 export const useBusinessData = () => {
   const businessData = {
     name: "Bromley Cyber",
@@ -29,11 +35,7 @@ export const useBusinessData = () => {
       name: "Bromley Cyber",
       url: "https://bromleycyber.co.uk"
     },
-    areaServed: [
-      { name: "Bromley" },
-      { name: "London" },
-      { name: "Kent" }
-    ]
+    areaServed: AREA_SERVED
   }
 
   const webDevService = {
@@ -43,11 +45,7 @@ export const useBusinessData = () => {
       name: "Bromley Cyber",
       url: "https://bromleycyber.co.uk"
     },
-    areaServed: [
-      { name: "Bromley" },
-      { name: "London" },
-      { name: "Kent" }
-    ]
+    areaServed: AREA_SERVED
   }
 
   return {

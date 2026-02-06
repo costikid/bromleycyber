@@ -1,5 +1,6 @@
 import { defineEventHandler, createError, readBody } from 'h3'
-import { Resend } from 'resend'
+import { createEmailService } from '~/server/utils/emailService'
+import { validateEmail, validateRequiredFields } from '~/server/utils/validation'
 
 interface WebsiteRequest {
   firstName: string
@@ -22,17 +23,7 @@ const renderWebsiteRequestEmail = (payload: WebsiteRequest) => {
 }
 
 export default defineEventHandler(async (event) => {
-  const runtimeConfig = useRuntimeConfig()
-
-  const apiKey = runtimeConfig.resendApiKey as string | undefined
-  if (typeof apiKey !== 'string' || apiKey.length === 0) {
-    throw createError({ statusCode: 500, statusMessage: 'Email service not configured' })
-  }
-
-  const recipient = runtimeConfig.notificationEmail as string | undefined
-  if (typeof recipient !== 'string' || recipient.length === 0) {
-    throw createError({ statusCode: 500, statusMessage: 'Notification email not configured' })
-  }
+  const emailService = createEmailService()
 
   const payload = await readBody<WebsiteRequest>(event)
 
@@ -40,23 +31,11 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, statusMessage: 'Invalid submission payload' })
   }
 
-  const requiredFields: Array<keyof WebsiteRequest> = ['firstName', 'lastName', 'email', 'description']
-  for (const field of requiredFields) {
-    if (!payload[field]) {
-      throw createError({ statusCode: 400, statusMessage: `Missing required field: ${field}` })
-    }
-  }
+  validateRequiredFields(payload, ['firstName', 'lastName', 'email', 'description'])
+  validateEmail(payload.email)
 
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  if (!emailPattern.test(payload.email)) {
-    throw createError({ statusCode: 400, statusMessage: 'Invalid email address' })
-  }
-
-  const resend = new Resend(apiKey)
-
-  await resend.emails.send({
+  await emailService.send({
     from: 'Bromley Cyber <onboarding@resend.dev>',
-    to: recipient,
     replyTo: payload.email,
     subject: 'New Secure Website Request',
     html: renderWebsiteRequestEmail(payload)

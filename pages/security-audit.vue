@@ -5,12 +5,12 @@
       <AppTerminal>
         <p class="mb-2">Initializing security audit protocols...</p>
         <p class="mb-2">Scanning for vulnerabilities...</p>
-        <p class="mb-2 text-terminal-brightGreen">AUDIT SYSTEM READY</p>
+        <p class="mb-2 text-terminal-bright-green">AUDIT SYSTEM READY</p>
       </AppTerminal>
 
       <h1 class="section-title">Website Security Audits</h1>
       
-      <div class="bg-terminal-darkGray border-l-4 border-terminal-green p-6 mb-8">
+      <div class="bg-terminal-dark-gray border-l-4 border-terminal-green p-6 mb-8">
         <h2 class="text-2xl mb-4">Website Security Audit Services</h2>
         <p class="mb-4">
           Our website security audits provide a thorough evaluation of your website's security posture, identifying vulnerabilities and weaknesses that could be exploited by attackers.
@@ -18,9 +18,12 @@
         <p class="mb-4">
           Using industry-standard tools and methodologies alongside custom security checks tailored to your specific website technology, we deliver actionable insights and recommendations to strengthen your website's security.
         </p>
+        <p class="mb-4">
+          Planning a new website? Consider our <NuxtLink to="/web-development" class="text-terminal-bright-green hover:underline">secure website development services</NuxtLink> to build security in from day one.
+        </p>
       </div>
 
-      <div class="bg-terminal-darkGray border-l-4 border-terminal-brightGreen p-6 mb-8">
+      <div class="bg-terminal-dark-gray border-l-4 border-terminal-bright-green p-6 mb-8">
         <h2 class="text-2xl mb-4">Ready for a Secure Website?</h2>
         <NuxtLink to="/contact" class="terminal-button inline-block">
           Contact Us
@@ -55,7 +58,7 @@ usePageSeo({
   description:
     "Professional website security audits for small businesses in Bromley and surrounding areas. Identify vulnerabilities and protect your website with our thorough security assessment by Costanza Casullo.",
   keywords:
-    'website security audit Bromley, website vulnerability assessment, security audit services Bromley, Costanza Casullo, small business website security, website penetration testing',
+    'website security audit Bromley, vulnerability assessment Bromley, penetration testing Bromley, security audit services, website security testing, WordPress security audit',
   canonicalPath: '/security-audit',
   twitter: {
     title: 'Website Security Audits in Bromley | Costanza Casullo',

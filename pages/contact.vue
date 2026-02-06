@@ -5,7 +5,7 @@
       <AppTerminal>
         <p class="mb-2">Initializing secure communication channel...</p>
         <p class="mb-2">Communication channel established.</p>
-        <p class="mb-2 text-terminal-brightGreen">READY TO RECEIVE MESSAGE</p>
+        <p class="mb-2 text-terminal-bright-green">READY TO RECEIVE MESSAGE</p>
       </AppTerminal>
 
       <h1 class="section-title">Contact Bromley Cyber</h1>

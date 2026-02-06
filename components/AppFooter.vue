@@ -10,7 +10,7 @@
               href="https://www.linkedin.com/in/costanza-casullo/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              class="text-terminal-green hover:text-terminal-brightGreen"
+              class="text-terminal-green hover:text-terminal-bright-green"
               aria-label="LinkedIn"
             >
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -23,12 +23,13 @@
         <div>
           <h3 class="text-xl font-bold mb-4">Quick Links</h3>
           <ul class="space-y-2">
-            <li><NuxtLink to="/" class="hover:text-terminal-brightGreen">Home</NuxtLink></li>
-            <li><NuxtLink to="/quiz" class="hover:text-terminal-brightGreen">Security Quiz</NuxtLink></li>
-            <li><NuxtLink to="/web-development" class="hover:text-terminal-brightGreen">Web Development</NuxtLink></li>
-            <li><NuxtLink to="/security-audit" class="hover:text-terminal-brightGreen">Security Audit</NuxtLink></li>
-            <li><NuxtLink to="/contact" class="hover:text-terminal-brightGreen">Contact Us</NuxtLink></li>
-            <li><NuxtLink to="/privacy" class="hover:text-terminal-brightGreen">Privacy Policy</NuxtLink></li>
+            <li><NuxtLink to="/" class="hover:text-terminal-bright-green">Home</NuxtLink></li>
+            <li><NuxtLink to="/quiz" class="hover:text-terminal-bright-green">Security Quiz</NuxtLink></li>
+            <li><NuxtLink to="/web-development" class="hover:text-terminal-bright-green">Web Development</NuxtLink></li>
+            <li><NuxtLink to="/security-audit" class="hover:text-terminal-bright-green">Security Audit</NuxtLink></li>
+            <li><NuxtLink to="/blog" class="hover:text-terminal-bright-green">Blog</NuxtLink></li>
+            <li><NuxtLink to="/contact" class="hover:text-terminal-bright-green">Contact Us</NuxtLink></li>
+            <li><NuxtLink to="/privacy" class="hover:text-terminal-bright-green">Privacy Policy</NuxtLink></li>
           </ul>
         </div>
       </div>
@@ -42,12 +43,12 @@
         <div>
           <h3 class="text-xl font-bold mb-4">Contact Details</h3>
           <p class="mb-2">
-            <a href="mailto:info@bromleycyber.co.uk" class="hover:text-terminal-brightGreen">
+            <a href="mailto:info@bromleycyber.co.uk" class="hover:text-terminal-bright-green">
               info@bromleycyber.co.uk
             </a>
           </p>
           <p>
-            <a href="tel:+447737163885" class="hover:text-terminal-brightGreen">
+            <a href="tel:+447737163885" class="hover:text-terminal-bright-green">
               +44 7737 163885
             </a>
           </p>

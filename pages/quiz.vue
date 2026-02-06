@@ -13,22 +13,12 @@
     </p>
 
     <!-- Quiz Component -->
-    <Suspense>
-      <template #default>
-        <AppSecurityQuiz />
-      </template>
-      <template #fallback>
-        <div class="terminal-panel text-center">Loading quiz...</div>
-      </template>
-    </Suspense>
+    <AppSecurityQuiz />
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineAsyncComponent } from 'vue'
 import { usePageSeo } from '~/composables/usePageSeo'
-
-const AppSecurityQuiz = defineAsyncComponent(() => import('~/components/AppSecurityQuiz.vue'))
 
 usePageSeo({
   title: "Free Website Security Quiz - Check Your Website's Security | Bromley Cyber",
